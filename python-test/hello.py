@@ -1,0 +1,2 @@
+print("Hello, Arch Python!")
+
