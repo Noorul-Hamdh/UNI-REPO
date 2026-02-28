@@ -4,7 +4,7 @@
         <title>
             BASKETBALL HUB
         </title>
-        <style>
+        <!-- <style>
             h1{
                 text-align:center;
                 color:rgb(255, 0, 0)
@@ -31,19 +31,86 @@
             .cent{
                 text-align:center ;
             }
+
+            .img{
+                border: 10px double black;
+                border-radius: 50px;
+            }
+            .content{
+                border: 10px double black;
+                border-radius: 50px;
+                
+            }
             
+        </style> -->
+
+        <style>
+                        body {
+                background-color: #f4f4f9; 
+                color: #333333;          
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .intro,.rules{
+                text-align: justify;
+                line-height: 1.2;
+            }
+            .content, .img {
+                background-color: #ffffff; 
+                border: 1px solid #dddddd; 
+                border-radius: 15px;
+                padding: 30px;
+                margin: 20px auto;
+                max-width: 800px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+            }
+
+            h1 {
+                text-align: center;
+                color: #2c3e50;          
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            
+            table {
+                width: 100%;
+                background-color: #ffffff;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            th {
+                background-color: #eeeeee;
+                color: #333;
+                padding: 12px;
+                border-bottom: 2px solid #2c3e50;
+            }
+
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #eeeeee;
+            }
+            .link{
+                text-align:center;
+            }
         </style>
         
     </head>
-    <body style="background-color: yellow;">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz91Yt38n0Cv28o1JIyVerms0vuWZXAFOuXQ&s" style="width: 200px; height: 200px;" alt="Not Found">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvCMIeFguhEfUt5Sdns0wWbw-39YRfLFO_ug&s" style="float: right;width: 200px; height: 200px;" alt="Not Found">
+    <body>
+    <div class = "img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz91Yt38n0Cv28o1JIyVerms0vuWZXAFOuXQ&s" style="width: 200px; height: 200px; border-radius: 50px;" alt="Not Found">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvCMIeFguhEfUt5Sdns0wWbw-39YRfLFO_ug&s" style="float: right;width: 200px; height: 200px; border-radius: 50px;" alt="Not Found">
 
 
 
-        <div class="cent"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbeigM0i4_MMVVc6wYUZwZs_OxAqtL65AzfQ&s"></div>
+        <div class="cent"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbeigM0i4_MMVVc6wYUZwZs_OxAqtL65AzfQ&s" style="border-radius: 50px;"></div>
 
-
+</div>
+<br>
+<div class = "content">
 
         
         <h1 style="text-align:center; color:brown;">INTRO TO BASKETBALL</h1>
@@ -119,6 +186,16 @@ Five players from each team may be on the court at one time. Substitutions are u
             </tr>
         </table>
         <br>
-        <br>
-    </body>
+        
+
+        <div class="regi">
+            <h1>REGISTRATION</h1>
+            <p class="registration" style="text-align: justify;">
+                To register for the basketball tournament, click here: <a href="registration.html">Register Now</a>
+            </p>
+        </div>
+
+
+        </div> <!--  content div end -->
+    </body> 
 </html> 
