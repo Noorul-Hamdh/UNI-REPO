@@ -626,3 +626,101 @@
 
 
 //stack applications
+
+
+//infix to postfix 
+
+
+
+// int precedence(char op){
+//     switch(op){
+//         case '*': case '/':
+//             return 2;
+//         case '+': case '-':
+//             return 1;
+//         default:
+//             return 0;
+//     }
+// }
+
+// int main(){
+//     string str;
+//     cin>>str;
+//     stack<char> st;
+//     string postfix = "";
+//     for(char ch:str){
+//         if(isalnum(ch)){
+//             postfix+=ch;
+//         }else if(ch=='('){
+//             st.push(ch);
+//         }
+//         else if(ch==')'){
+//             while(  !st.empty() && st.top()!='('){
+//                 postfix+=st.top();
+//                 st.pop();
+//             }
+//             st.pop();
+//         }else{
+//             while(!st.empty() && precedence(st.top()) >= precedence(ch)){
+//                 postfix += st.top();
+//                 st.pop();
+//             }
+//             st.push(ch);
+//         }
+//     }
+//     while(!st.empty()){
+//         postfix+=st.top();
+//         st.pop();
+//     }
+//     cout<<postfix;
+// }
+
+
+
+//queue
+
+
+
+//queue using array
+
+class myQueue{
+    public:
+        int capacity;
+        int top;
+        int* arr;
+
+        myQueue(int val){
+            capacity = val;
+            top = -1;
+            arr = new int[capacity];
+        }
+
+        void enqueue(int val){
+            if(top==capacity-1){
+                cout<<"Queue is full";
+                return;
+            }else{
+                arr[++top]=val;
+            }
+        }
+
+        int enqueue(){
+            if(top==-1){
+                cout<<"Queue is empty";
+                return -1;
+            }else{
+                int val = arr[0];
+                for(int i=0;i<top;i++){
+                    arr[i]=arr[i+1];
+                }
+                top--;
+                return val;
+            }
+        }
+
+        int peek(){
+            return arr[top];
+        }
+
+        
+};
