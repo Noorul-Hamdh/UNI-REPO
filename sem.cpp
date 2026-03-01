@@ -462,3 +462,167 @@
 
 //     return 0;
 // }
+
+
+//linear searching
+
+// void linearsearch(int arr[],int target,int n){
+//     for(int i=0;i<n;i++){
+//         if(arr[i]==target){
+//             cout<<"Found";
+//             return;
+//         }
+//     }
+//     cout<<"Not Found";
+// }
+
+// void binarysearch(int arr[],int target,int n){
+//     int low = 0;
+//     int high = n -1;
+//     while(low<=high){
+//         int mid = low + (high - low) / 2;
+//         if(arr[mid]==target){
+//             cout<<"found";
+//             return;
+//         }
+//         if(arr[mid]>target){
+//             high = mid - 1;
+//         }else{
+//             low = mid + 1;
+//         }
+//     }
+//     cout<<"Not FOund";
+// }
+
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int target;
+//     cin>>target;
+//     linearsearch(arr,target,n);
+//     binarysearch(arr,target,n);
+// }
+
+
+
+//stack implementations
+
+
+//stack using array
+
+
+
+// class mystack{
+//     private:
+//         int capacity;
+//         int top;
+//         int* arr;
+//     public:
+//         mystack(int val){
+//             capacity = val;
+//             top=-1;
+//             arr = new int[capacity];
+//         }
+
+//         void push(int val){
+//             if(top==capacity-1){
+//                 cout<<"Stack Overflow";
+//                 return;
+//             }else{
+//                 arr[++top]=val;
+//             }
+//         }
+
+//         int pop(){
+//             if(top==-1){
+//                 cout<<"Stack underflow";
+//                 return -1;
+//             }else{
+//                 return arr[top--];
+//             }
+//         }
+
+//         int peek(){
+//             if(top==-1){
+//                 cout<<"stack underflow";
+//                 return -1;
+//             }else{
+//                 return arr[top];
+//             }
+//         }
+
+//         bool isempty(){
+//             return top==-1;
+//         }
+//         bool isfull(){
+//             return top==capacity-1;
+//         }
+
+//         int sizeofstack(){
+//             return top+1;
+//         }
+// };
+
+
+//stack using linked list
+
+// class Node{
+//     public:
+//         int data;
+//         Node* next;
+
+//         Node(int val){
+//             data = val;
+//             next = nullptr;
+//         }
+// };
+
+// class mystack{
+//     private:
+//         Node* head;
+//         Node* tail;
+//         int count;
+//     public:
+//         mystack(){
+//             head=nullptr;
+//             tail = nullptr;
+//             count = 0;
+//         }
+
+//         void push(int val){
+//             Node* newNode = new Node(val);
+//             newNode->next = head;
+//             head = newNode;
+//             count++;
+//         }
+
+//         int pop(){
+//             if(head==nullptr){
+//                 cout<<"Underflow";
+//                 return -1;
+//             }
+//             Node* todelete = head;
+//             head = head->next;
+//             if(head==nullptr){
+//                 tail = nullptr;
+//             }
+//             int val = todelete->data;
+//             delete todelete;
+//             count--;
+//             return val;
+//         }
+
+//         int peek(){
+//             if(head==nullptr){
+//                 return -1;
+//             }
+//             return head->data;
+//         }
+// };
+
+
+//stack applications
