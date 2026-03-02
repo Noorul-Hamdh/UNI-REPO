@@ -683,44 +683,303 @@
 
 //queue using array
 
-class myQueue{
+// class myQueue{
+//     public:
+//         int capacity;
+//         int top;
+//         int* arr;
+
+//         myQueue(int val){
+//             capacity = val;
+//             top = -1;
+//             arr = new int[capacity];
+//         }
+
+//         void enqueue(int val){
+//             if(top==capacity-1){
+//                 cout<<"Queue is full";
+//                 return;
+//             }else{
+//                 arr[++top]=val;
+//             }
+//         }
+
+//         int dequeue(){
+//             if(top==-1){
+//                 cout<<"Queue is empty";
+//                 return -1;
+//             }else{
+//                 int val = arr[0];
+//                 for(int i=0;i<top;i++){
+//                     arr[i]=arr[i+1];
+//                 }
+//                 top--;
+//                 return val;
+//             }
+//         }
+
+//         int peek(){
+//             return arr[0];
+//         }
+// };
+
+
+//queue using linked list
+
+// class Node{
+//     public:
+//         int data;
+//         Node* next;
+
+//         Node(int val){
+//             data = val;
+//             next = nullptr;
+//         }
+// };
+
+// class myQueue{
+//     private:
+//         Node* front;
+//         Node* rear;
+//         int currsize;
+//     public:
+//         myQueue(){
+//             front = nullptr;
+//             rear = nullptr;
+//             currsize = 0;
+//         }
+
+//         void enqueue(int val){
+//             Node* newNode = new Node(val);
+//             if(front==nullptr){
+//                 front = newNode;
+//                 rear = newNode;
+//             }else{
+//                 rear->next = newNode;
+//                 rear = newNode;
+//             }
+//             currsize++;
+//         }
+
+//         int dequeue(){
+//             if(front==nullptr){
+//                 cout<<"Queue is empty";
+//                 return -1;
+//             }
+//             Node* temp = front;
+//             int val = temp->data;
+//             front = front->next;
+//             if(front==nullptr){
+//                 rear=nullptr;
+//             }
+//             delete temp;
+//             currsize--;
+//             return val;
+//         }
+
+//         int peek(){
+//             if(front==nullptr)return -1;
+//             return front->data;
+//         }
+//     };
+
+
+//BST
+
+
+// class Node{
+//     public:
+//         int data;
+//         Node* left;
+//         Node* right;
+
+//         Node(int val){
+//             data = val;
+//             left = nullptr;
+//             right = nullptr;
+//         }
+// };
+
+// class bst{
+//     private:
+//         Node* root;
+
+//         Node* insert(Node* node,int val){
+//             if(node==nullptr)return new Node(val);
+
+//             if(val<node->data){
+//                 node->left = insert(node->left,val);
+//             }
+//             if(val>node->data){
+//                 node->right = insert(node->right,val);
+//             }
+//             return node;
+//         }
+
+
+//         void inorder(Node* node){
+//             if(node==nullptr)return;
+//             inorder(node->left);
+//             cout<<node->data;
+//             inorder(node->right);
+//         }
+
+//         Node* search(Node* node,int val){
+//             if(node==nullptr)return 0;
+//             if(node->data==val){
+//                 cout<<"Found";
+//                 return 0;
+//             }
+//             if(val<node->data){
+//                 return search(node->left,val);
+//             }
+//             return search(node->right,val);
+//         }
+
+//         void printrange(Node* node,int l,int r){
+//             if(node->data>l){
+//                 printrange(node->left,l,r);
+//             }
+//             if(node->data>=l && node->data<=r){
+//                 cout<<node->data<<" ";
+//             }
+//             if(node->data<r){
+//                 printrange(node->right,l,r);
+//             }
+//         }
+
+//     public:
+//         bst(){
+//             root = nullptr;
+//         }
+
+//         void add(int val){
+//             root = insert(root,val);
+//         }
+
+//         void display(){
+//             inorder(root);
+//             cout<<endl;
+//         }
+// };
+
+
+
+//bst deletion
+
+
+
+// Node* findMin(Node* node){
+//     while(node->left != nullptr){
+//         node = node->left;
+//     }
+//     return node;
+// }
+
+// Node* deleteNode(Node* node, int val){
+//     if(node == nullptr)
+//         return nullptr;
+
+//     if(val < node->data){
+//         node->left = deleteNode(node->left, val);
+//     }
+//     else if(val > node->data){
+//         node->right = deleteNode(node->right, val);
+//     }
+//     else{
+//         // Case 1: No child
+//         if(node->left == nullptr && node->right == nullptr){
+//             delete node;
+//             return nullptr;
+//         }
+
+//         // Case 2: One child
+//         else if(node->left == nullptr){
+//             Node* temp = node->right;
+//             delete node;
+//             return temp;
+//         }
+//         else if(node->right == nullptr){
+//             Node* temp = node->left;
+//             delete node;
+//             return temp;
+//         }
+
+//         // Case 3: Two children
+//         else{
+//             Node* successor = findMin(node->right);
+//             node->data = successor->data;
+//             node->right = deleteNode(node->right, successor->data);
+//         }
+//     }
+
+//     return node;
+// }
+
+
+class Node{
     public:
-        int capacity;
-        int top;
-        int* arr;
+        int data;
+        Node* left;
+        Node* right;
 
-        myQueue(int val){
-            capacity = val;
-            top = -1;
-            arr = new int[capacity];
+        Node(int val){
+            data = val;
+            left = right = nullptr;
         }
 
-        void enqueue(int val){
-            if(top==capacity-1){
-                cout<<"Queue is full";
-                return;
+};
+
+class BST{
+    private:
+        Node* root;
+
+        Node* insert(Node* node,int val){
+            if(node==nullptr)return new Node(val);
+            if(node->data>val){
+                node->left = insert(node->left,val);
             }else{
-                arr[++top]=val;
+                node->right = insert(node->right,val);
             }
+            return node;
+        }
+        
+        void inorder(Node* node){
+            if(node==nullptr)return;
+            inorder(node->left);
+            cout<<node->data;
+            inorder(node->right);
         }
 
-        int enqueue(){
-            if(top==-1){
-                cout<<"Queue is empty";
-                return -1;
-            }else{
-                int val = arr[0];
-                for(int i=0;i<top;i++){
-                    arr[i]=arr[i+1];
+        void levelorder(Node* node){
+            if(node==nullptr)return;
+            queue<Node*> q;
+            q.push(node);
+            while(!q.empty()){
+                Node* curr = q.top();
+                q.pop();
+                cout<<curr->data<<" ";
+                if(curr->left!=nullptr){
+                    levelorder(node->left);
                 }
-                top--;
-                return val;
+                if(curr->right!=nullptr){
+                    levelorder(node->right);
+                }
             }
         }
 
-        int peek(){
-            return arr[top];
-        }
 
         
+        public:
+            BST(){
+                root = nullptr;
+            }
+            void add(int val){
+                root = insert(root,val);
+            }
+
+            void add(){
+                inorder(root);
+
+            }
 };
