@@ -413,10 +413,10 @@ class MinHeap{
                 int left = 2*i + 1;
                 int right = 2*i + 2;
 
-                if(left<n && arr[left] > arr[largest]){
+                if(left<n && arr[left] < arr[largest]){
                     largest = left;
                 }
-                if(right<n && arr[right] > arr[largest]){
+                if(right<n && arr[right] < arr[largest]){
                     largest = right;
                 }
                 if(largest==i){
@@ -443,3 +443,40 @@ int main(){
         cout<<arr[i]<<" ";
     }
 }
+
+
+class Node{
+    public:
+        int data;
+        Node* next;
+
+        Node(int val){
+            data = val;
+            next = nullptr;
+        }
+};
+
+class stack{
+    private:
+        Node* head;
+        Node* tail;
+        int currsize;
+
+    public:
+        stack(){
+            head=tail=nullptr;
+            currsize = 0;
+        }
+
+        void push(int val){
+            Node* newNode = new Node(val);
+            newNode->next = head;
+            head = newNode;
+        }
+
+        int pop(){
+            Node* temp = head;
+            int val = temp->data;
+            head = head->next;
+        }
+};

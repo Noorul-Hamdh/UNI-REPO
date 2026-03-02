@@ -917,69 +917,123 @@
 // }
 
 
-class Node{
-    public:
-        int data;
-        Node* left;
-        Node* right;
 
-        Node(int val){
-            data = val;
-            left = right = nullptr;
-        }
+//BST: BFS
 
-};
 
-class BST{
+
+// class Node{
+//     public:
+//         int data;
+//         Node* left;
+//         Node* right;
+
+//         Node(int val){
+//             data = val;
+//             left = right = nullptr;
+//         }
+
+// };
+
+// class BST{
+//     private:
+//         Node* root;
+
+//         Node* insert(Node* node,int val){
+//             if(node==nullptr)return new Node(val);
+//             if(node->data>val){
+//                 node->left = insert(node->left,val);
+//             }else{
+//                 node->right = insert(node->right,val);
+//             }
+//             return node;
+//         }
+        
+//         void inorder(Node* node){
+//             if(node==nullptr)return;
+//             inorder(node->left);
+//             cout<<node->data;
+//             inorder(node->right);
+//         }
+
+//         void levelorder(Node* node){
+//             if(node==nullptr)return;
+//             queue<Node*> q;
+//             q.push(node);
+//             while(!q.empty()){
+//                 Node* curr = q.front();
+//                 q.pop();
+//                 cout<<curr->data<<" ";
+//                 if(curr->left!=nullptr){
+//                     levelorder(node->left);
+//                 }
+//                 if(curr->right!=nullptr){
+//                     levelorder(node->right);
+//                 }
+//             }
+//         }
+
+
+//         void bfs(int startNode, vector<vector<int>>& adjList, vector<bool>& visited){
+//             queue<int> q;
+//             q.push(startNode);
+//             visited[startNode] = true;
+//             while(!q.empty()){
+//                 int curr = q.front();
+//                 q.pop();
+//                 cout<<curr<<" ";
+//                 for(int i=0;i<adjList.size();i++){
+//                     if(adjList[curr][i]==1 && !visited[i]){
+//                         visited[i]=true;
+//                         q.push(i);
+//                     }
+//                 }
+//             }
+//         }
+
+
+        
+//         public:
+//             BST(){
+//                 root = nullptr;
+//             }
+//             void add(int val){
+//                 root = insert(root,val);
+//             }
+
+//             void add(){
+//                 inorder(root);
+//             }
+// };
+
+
+//adjaceny matrix and adjacency list
+
+
+
+// int main(){
+//     int N,E;
+//     cin>>N>>E;
+//     vector<vector<int>> adjMatrix(N+1,vector<int>(N+1,0));
+//     vector<vector<int>> adjList(N,vector<int>(N,0));
+//     vector<bool> visited(n,false);
+//     int u,v,w;
+//     for(int i=1;i<=E;i++){
+//         cin>>u>>v>>w;
+//         adjMatrix[u][v]=w;
+//         adjMatrix[v][u]=w;
+//     }
+//     for(int i=1;i<=N;i++){
+//         for(int j=1;j<=N;j++){
+//             cout<<adjMatrix[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
+
+
+class stack{
     private:
-        Node* root;
-
-        Node* insert(Node* node,int val){
-            if(node==nullptr)return new Node(val);
-            if(node->data>val){
-                node->left = insert(node->left,val);
-            }else{
-                node->right = insert(node->right,val);
-            }
-            return node;
-        }
-        
-        void inorder(Node* node){
-            if(node==nullptr)return;
-            inorder(node->left);
-            cout<<node->data;
-            inorder(node->right);
-        }
-
-        void levelorder(Node* node){
-            if(node==nullptr)return;
-            queue<Node*> q;
-            q.push(node);
-            while(!q.empty()){
-                Node* curr = q.top();
-                q.pop();
-                cout<<curr->data<<" ";
-                if(curr->left!=nullptr){
-                    levelorder(node->left);
-                }
-                if(curr->right!=nullptr){
-                    levelorder(node->right);
-                }
-            }
-        }
-
-
-        
-        public:
-            BST(){
-                root = nullptr;
-            }
-            void add(int val){
-                root = insert(root,val);
-            }
-
-            void add(){
-                inorder(root);
-
-            }
+    
 };
+
