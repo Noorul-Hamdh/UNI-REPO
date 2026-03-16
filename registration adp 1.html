@@ -1,180 +1,180 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            BASKETBALL HUB
-        </title>
-        <style>
-            .top,.content{
-                background-color: #ffffff; 
-                border: 1px solid #dddddd; 
-                border-radius: 15px;
-                padding: 30px;
-                margin: 20px auto;
-                max-width: 800px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>
+                BASKETBALL HUB
+            </title>
+            <style>
+                .top,.content{
+                    background-color: #ffffff; 
+                    border: 1px solid #dddddd; 
+                    border-radius: 15px;
+                    padding: 30px;
+                    margin: 20px auto;
+                    max-width: 800px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+                    
+                }
+                .class{
+                    border:10px;
+                }
+                body{
                 
-            }
-            .class{
-                border:10px;
-            }
-            body{
-            
-                background: linear-gradient(to right,#f0d57c, #f79d59);
-                color: #333333;          
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                margin: 0;
-                padding: 20px;
-            
-            }
-            h3 {
-                text-align: center;
-                color: #2c3e50;          
-                text-transform: uppercase;
-                letter-spacing: 2px;
-            }
-            .name,.namedob,.sportlevel,.phonemail,.password,.submit{
-                display:flex;
-                justify-content: space-between;
-                gap:30px;
-                width:100%;
-                margin-bottom: 20px;
-            }
-            .first,.last,.father,.dob,.sport,.Activity,.phone,.email,.pass,.sub{
-                display: flex;
-                align-items: flex-start;
-                flex-direction: column;
-                flex:1;
-                gap:8px;
-            }
+                    background: linear-gradient(to right,#f0d57c, #f79d59);
+                    color: #333333;          
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    margin: 0;
+                    padding: 20px;
+                
+                }
+                h3 {
+                    text-align: center;
+                    color: #2c3e50;          
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+                .name,.namedob,.sportlevel,.phonemail,.password,.submit{
+                    display:flex;
+                    justify-content: space-between;
+                    gap:30px;
+                    width:100%;
+                    margin-bottom: 20px;
+                }
+                .first,.last,.father,.dob,.sport,.Activity,.phone,.email,.pass,.sub{
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    flex:1;
+                    gap:8px;
+                }
 
-            .first input, .last input, .father input, .dob input, .sport select, .Activity select, .phone input, .email input,.pass input,.sub button{
-                width: 100%;
-                border-radius: 10px;
-                padding:12px;
-                box-sizing: border-box;
-            }
+                .first input, .last input, .father input, .dob input, .sport select, .Activity select, .phone input, .email input,.pass input,.sub button{
+                    width: 100%;
+                    border-radius: 10px;
+                    padding:12px;
+                    box-sizing: border-box;
+                }
 
-            button:hover{
-                background-color:#f79d59;
-            }
+                button:hover{
+                    background-color:#f79d59;
+                }
 
-        </style>
-    </head>
-    <body>
-        <div class ="top">
-            <h1 style="text-align: center; color:brown; letter-spacing: 2px;">REGISTRATION PAGE</h1>
-        </div>
-        <div class = "content">
-            <h3 style="text-align: center; ">
-                Welcome to the Sports Registration Page!
-            </h3>
-            <br><br>
-
-
-
-            <form>
-                <div class="name">
-                    <div class="first">
-                        <label for="first"><strong>First Name:</strong></label>
-                        
-                        <input type="text" placeholder="Enter Your First Name" >
-                    </div>
-                    <div class="last">
-                        <label for="last"><strong>Last Name: </strong> </label>
-                        <input type="text" placeholder="Enter Your Last Name">
-                    </div>
-                </div>
-                <br>
-
-
-
-
-                <div class="namedob">
-                    <div class="father">
-                    <label for="father"><b>Father / Guardian Name:</b></label>
-                    <input type="text" placeholder="Enter Your Father's Name" style ="margin-left: 10px;">
-                    </div>
-                    <div class="dob">
-                        <label for="dob"><b>Date of Birth:</b></label>
-                        <input type="date" style="margin-left: 10px;">
-                    </div>
-                </div>
-                <br>
-
-
-
-
-                <div class="sportlevel">
-                    <div class="sport">
-                        <label for="sport"><b>Sport:</b></label>
-                        <select >
-                            <option value="" disabled selected>Select Your Sport</option>
-                            <option>Basketball</option>
-                            <option>Football</option>
-                            <option>Archery</option>
-                            <option>E-Sports</option>
-                        </select>
-                    </div>
-                    <div class="Activity">
-                        <label for="Activity"><b>Activity Level:</b></label>
-                        <select>
-                            <option value="" disabled selected>Select Your Level</option>
-                            <option>District</option>
-                            <option>State</option>
-                            <option>National</option>
-                            <option>International</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="Gender">
-                    <div class="gen">
-                        <br>
-                        <label for="gen"><b>Gender:</b></label><br>
-                        <input type="radio" name="gend" value="male">Male
-                        <input type="radio" name="gend" value="female">Female
-                        <input type="radio" name="gend" value="other">Other    
-                    </div>
-                </div>
-
-                <div class="Address">
-                    <div class="add">
-                        <br>
-                        <label for="add"><b>Address:</b></label><br>
-                        <textarea placeholder="Enter Your Address" rows="4" cols="90" style="border-radius: 10px; padding: 10px;"></textarea>
-                    </div>
-                </div>
-
-                <div class="phonemail">
-                    <div class="phone">
-                        
-                        <label for="phone"><b>Phone Number:</b></label><br>
-                        <input type="tel" placeholder="Enter Your Phone Number">
-                    </div>
-                    <div class="email">
-                        
-                        <label for="email"><b>Email:</b></label><br>
-                        <input type="email" placeholder="Enter Your Email">
-                </div>
+            </style>
+        </head>
+        <body>
+            <div class ="top">
+                <h1 style="text-align: center; color:brown; letter-spacing: 2px;">REGISTRATION PAGE</h1>
             </div>
-                
-                <div class="password">
-                    <div class="pass">
-                        
-                        <label for="password"><b>Password:</b></label><br>
-                        <input type="password" placeholder="Enter Your Password">
+            <div class = "content">
+                <h3 style="text-align: center; ">
+                    Welcome to the Sports Registration Page!
+                </h3>
+                <br><br>
+
+
+
+                <form>
+                    <div class="name">
+                        <div class="first">
+                            <label for="first"><strong>First Name:</strong></label>
+                            
+                            <input type="text" placeholder="Enter Your First Name" >
+                        </div>
+                        <div class="last">
+                            <label for="last"><strong>Last Name: </strong> </label>
+                            <input type="text" placeholder="Enter Your Last Name">
+                        </div>
+                    </div>
+                    <br>
+
+
+
+
+                    <div class="namedob">
+                        <div class="father">
+                        <label for="father"><b>Father / Guardian Name:</b></label>
+                        <input type="text" placeholder="Enter Your Father's Name" style ="margin-left: 10px;">
+                        </div>
+                        <div class="dob">
+                            <label for="dob"><b>Date of Birth:</b></label>
+                            <input type="date" style="margin-left: 10px;">
+                        </div>
+                    </div>
+                    <br>
+
+
+
+
+                    <div class="sportlevel">
+                        <div class="sport">
+                            <label for="sport"><b>Sport:</b></label>
+                            <select >
+                                <option value="" disabled selected>Select Your Sport</option>
+                                <option>Basketball</option>
+                                <option>Football</option>
+                                <option>Archery</option>
+                                <option>E-Sports</option>
+                            </select>
+                        </div>
+                        <div class="Activity">
+                            <label for="Activity"><b>Activity Level:</b></label>
+                            <select>
+                                <option value="" disabled selected>Select Your Level</option>
+                                <option>District</option>
+                                <option>State</option>
+                                <option>National</option>
+                                <option>International</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="Gender">
+                        <div class="gen">
+                            <br>
+                            <label for="gen"><b>Gender:</b></label><br>
+                            <input type="radio" name="gend" value="male">Male
+                            <input type="radio" name="gend" value="female">Female
+                            <input type="radio" name="gend" value="other">Other    
+                        </div>
+                    </div>
+
+                    <div class="Address">
+                        <div class="add">
+                            <br>
+                            <label for="add"><b>Address:</b></label><br>
+                            <textarea placeholder="Enter Your Address" rows="4" cols="90" style="border-radius: 10px; padding: 10px;"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="phonemail">
+                        <div class="phone">
+                            
+                            <label for="phone"><b>Phone Number:</b></label><br>
+                            <input type="tel" placeholder="Enter Your Phone Number">
+                        </div>
+                        <div class="email">
+                            
+                            <label for="email"><b>Email:</b></label><br>
+                            <input type="email" placeholder="Enter Your Email">
                     </div>
                 </div>
-
-                <div class="submit">
-                    <div class="sub">
-                        <button type="submit">Submit</button>
+                    
+                    <div class="password">
+                        <div class="pass">
+                            
+                            <label for="password"><b>Password:</b></label><br>
+                            <input type="password" placeholder="Enter Your Password">
+                        </div>
                     </div>
-                </div>
+
+                    <div class="submit">
+                        <div class="sub">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </div>
 
 
-            </form>
-        </div>
-    </body>
-</html>
+                </form>
+            </div>
+        </body>
+    </html>

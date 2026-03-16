@@ -30,6 +30,8 @@
 //     }
 // }
 
+
+
 // int main(){
 //     int n,e;
 //     cin>>n>>e;
@@ -179,27 +181,50 @@
 //             tail = newNode;
 //         }
 //     }
-//     int pos;
-//     cin>>pos;
-//     if(pos==0){
-//         Node* temp = head;
-//         head = head->next;
-//         if(head==nullptr)tail=nullptr;
-//         delete temp;
-//     }else{
-//         Node* temp = head;
-//         for(int i=0;i<pos-1;i++){
-//             temp=temp->next;
-//         }
-//         Node* todelete = temp->next;
-//         temp->next = temp->next->next;
-//         if(todelete==tail){
-//             tail = temp;
-//         }
-//         delete todelete;
+    int n;
+    cin>>n;
+    Node* head = nullptr;
+    Node* tail = nullptr;
+    for(int i=0;i<n;i++){
+        int id;
+        cin>>id;
+        Node* newNode = new Node(id);
+        if(head==nullptr){
+            head = newNode;
+            tail = newNode;
+        }else{
+            tail->next = newNode;
+            tail = newNode;
+        }
+    }
+    int val;
+    Node* insert = new Node(val);
+    int pos;
+    cin>>pos;
+    int size;
+    //insertiong at start and specific part
+    if(pos==0){
+        insert->next = head;
+        head = insert;
+    }
+    //insertion at end
+    else if(pos==size){
+    tail->next = insert;
+    tail = insert;
+    }
+    else{
         
-//     }
-// }
+        Node* temp = head;
+        for(int i=0;i<pos-1;i++){
+            temp = temp->next;
+        }
+        insert->next = temp->next;
+        temp->next = insert;
+    }
+}
+
+
+
 
 
 //doubly
@@ -269,7 +294,7 @@
 
 // int main(){
     
-//     int n;
+//     int n;   
 //     cin>>n;
 //     Node* head = nullptr;
 //     Node* tail = nullptr;
@@ -643,45 +668,45 @@
 //     }
 // }
 
-// int main(){
-//     string str;
-//     cin>>str;
-//     stack<char> st;
-//     string postfix = "";
-//     for(char ch:str){
-//         if(isalnum(ch)){
-//             postfix+=ch;
-//         }else if(ch=='('){
-//             st.push(ch);
-//         }
-//         else if(ch==')'){
-//             while(  !st.empty() && st.top()!='('){
-//                 postfix+=st.top();
-//                 st.pop();
-//             }
-//             st.pop();
-//         }else{
-//             while(!st.empty() && precedence(st.top()) >= precedence(ch)){
-//                 postfix += st.top();
-//                 st.pop();
-//             }
-//             st.push(ch);
-//         }
-//     }
-//     while(!st.empty()){
-//         postfix+=st.top();
-//         st.pop();
-//     }
-//     cout<<postfix;
-// }
+int main(){
+    string str;
+    cin>>str;
+    stack<char> st;
+    string postfix = "";
+    for(char ch:str){
+        if(isalnum(ch)){
+            postfix+=ch;
+        }else if(ch=='('){
+            st.push(ch);
+        }
+        else if(ch==')'){
+            while(  !st.empty() && st.top()!='('){
+                postfix+=st.top();
+                st.pop();
+            }
+            st.pop();
+        }else{
+            while(!st.empty() && precedence(st.top()) >= precedence(ch)){
+                postfix += st.top();
+                st.pop();
+            }
+            st.push(ch);
+        }
+    }
+    while(!st.empty()){
+        postfix+=st.top();
+        st.pop();
+    }
+    cout<<postfix;
+}
 
 
 
-//queue
+// queue
 
 
 
-//queue using array
+// queue using array
 
 // class myQueue{
 //     public:
@@ -724,7 +749,7 @@
 // };
 
 
-//queue using linked list
+// queue using linked list
 
 // class Node{
 //     public:
@@ -1011,25 +1036,25 @@
 
 
 
-// int main(){
-//     int N,E;
-//     cin>>N>>E;
-//     vector<vector<int>> adjMatrix(N+1,vector<int>(N+1,0));
-//     vector<vector<int>> adjList(N,vector<int>(N,0));
-//     vector<bool> visited(n,false);
-//     int u,v,w;
-//     for(int i=1;i<=E;i++){
-//         cin>>u>>v>>w;
-//         adjMatrix[u][v]=w;
-//         adjMatrix[v][u]=w;
-//     }
-//     for(int i=1;i<=N;i++){
-//         for(int j=1;j<=N;j++){
-//             cout<<adjMatrix[i][j]<<" ";
-//         }
-//         cout<<endl;
-//     }
-// }
+int main(){
+    int N,E;
+    cin>>N>>E;
+    vector<vector<int>> adjMatrix(N+1,vector<int>(N+1,0));
+    vector<vector<int>> adjList(N,vector<int>(N,0));
+    vector<bool> visited(n,false);
+    int u,v,w;
+    for(int i=1;i<=E;i++){
+        cin>>u>>v>>w;
+        adjMatrix[u][v]=w;
+        adjMatrix[v][u]=w;
+    }
+    for(int i=1;i<=N;i++){
+        for(int j=1;j<=N;j++){
+            cout<<adjMatrix[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
 
 
 class stack{
