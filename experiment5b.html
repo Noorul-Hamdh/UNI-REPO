@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Webpage</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background-color: lightyellow;
+      text-align: center;
+      padding: 20px;
+    }
+
+    button {
+      padding: 8px;
+      margin: 5px;
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input {
+      padding: 8px;
+      margin: 10px;
+    }
+
+    li {
+      background: lightblue;
+      margin: 5px;
+      padding: 8px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Dynamic Webpage</h1>
+
+<input type="text" id="itemInput" placeholder="Enter item">
+
+<br>
+
+<button onclick="addItem()">Add Item</button>
+<button onclick="removeItem()">Remove Last Item</button>
+
+<ul id="list"></ul>
+
+<script>
+
+function addItem() {
+  let input = document.getElementById("itemInput").value;
+
+  if (input === "") {
+    alert("Enter something!");
+    return;
+  }
+
+  let li = document.createElement("li");
+  li.innerHTML = `
+    <span>${input}</span>
+    <button onclick="editItem(this)">Edit</button>
+  `;
+
+  document.getElementById("list").appendChild(li);
+  document.getElementById("itemInput").value = "";
+}
+
+function removeItem() {
+  let list = document.getElementById("list");
+
+  if (list.lastChild) {
+    list.removeChild(list.lastChild);
+  } else {
+    alert("No items to remove!");
+  }
+}
+
+function editItem(btn) {
+  let li = btn.parentElement;
+  let span = li.querySelector("span");
+
+  let newText = prompt("Edit item:", span.innerText);
+
+  if (newText !== null && newText !== "") {
+    span.innerText = newText;
+  }
+}
+
+</script>
+
+</body>
+</html>
