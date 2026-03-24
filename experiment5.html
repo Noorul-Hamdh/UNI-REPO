@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fun Learning Page</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgb(210, 249, 254);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #ff6f61;
+    }
+
+    #content {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Learn with Fun!</h1>
+    <p>Click a button to learn something new!</p>
+
+    <button onclick="showFact('animal')">Animal Fact</button>
+    <button onclick="showFact('space')">Space Fact</button>
+    <button onclick="showFact('math')">Math Fun</button>
+
+    <div id="content">Let's start learning something new!</div>
+  </div>
+
+  <script>
+    function showFact(type) {
+      const contentDiv = document.getElementById("content");
+
+      const animalFacts = [
+        "Elephants are the largest land animals.",
+        "Dolphins are very intelligent and can recognize themselves in mirrors.",
+        "A group of lions is called a pride.",
+        "Cheetahs are the fastest land animals.",
+        "Octopuses have three hearts!"
+      ];
+
+      const spaceFacts = [
+        "Earth is the only known planet with life.",
+        "The Sun is a star at the center of our solar system.",
+        "Jupiter is the largest planet.",
+        "A day on Venus is longer than a year on Venus.",
+        "Saturn has beautiful rings made of ice and rock."
+      ];
+
+      let text = "";
+
+      if (type === 'animal') {
+        const randomIndex = Math.floor(Math.random() * animalFacts.length);
+        text = animalFacts[randomIndex];
+      } else if (type === 'space') {
+        const randomIndex = Math.floor(Math.random() * spaceFacts.length);
+        text = spaceFacts[randomIndex];
+      } else if (type === 'math') {
+        const num1 = Math.floor(Math.random() * 10);
+        const num2 = Math.floor(Math.random() * 10);
+        text = `What is ${num1} + ${num2}? Answer: ${num1 + num2}`;
+      }
+
+      contentDiv.innerText = text;
+    }
+  </script>
+
+</body>
+</html>

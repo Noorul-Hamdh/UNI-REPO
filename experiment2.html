@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>
+            Borders
+        </title>
+        <style>
+
+            body{
+                background: linear-gradient(to right, lightblue, lightpink);
+            }
+
+            .header,.box{
+                text-align: center;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            .box{
+                background-color: rgba(255, 255, 255, 0.7);
+                border-radius: 20px;
+                padding: 30px;
+                margin: 20px auto;
+                max-width: 600px;
+                text-align: center;
+                box-shadow: 5px 5px 15px black;
+                color:rgb(210, 60, 0);
+            }
+            
+            .button-container {
+                text-align: center;
+                margin-top: 20px;
+            }
+            .button{
+                text-align: center;
+                
+            }
+
+            button {
+                background-color: rgba(255, 255, 255, 0.7);
+                color: #333;
+                padding: 12px 30px;
+                border: none;
+                font-size: 16px;
+                border-radius: 50px; 
+                cursor:pointer;
+                box-shadow: 5px 5px 15px black;
+            }
+        </style>
+        
+    </head>
+
+    <body>
+        <div class="header">
+            <h1 style="color:white;">
+                CSS Web Enhancement Example
+            </h1>
+        </div>
+        <br>
+
+        <div class="box" id="contentBox">
+            <p>
+
+                <br>
+                <b>Enhanced Web Element</b><br><br>
+                <br>
+                This box demonstrates:<br><br>
+                Rounded Borders<br>
+                Box Shadow<br>
+                Multiple Backgrounds<br><br>
+                
+            </p>
+        </div>
+        <br>
+        <div class="button">
+            <button onclick="changeBackground()">Change Backgrounds</button>
+        </div>
+
+        <script>
+                let backgrounds = [
+                "linear-gradient(to right, lightblue, lightpink)",
+                "url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop')",
+                "url('https://thumbs.dreamstime.com/b/sleek-home-office-setup-features-multiple-screens-displaying-code-backlit-keyboard-adds-vibrancy-enhanced-neon-372650307.jpg?w=992')",
+                "url('https://thumbs.dreamstime.com/b/home-office-setup-features-coding-multiple-screens-backlit-keyboard-dark-atmosphere-enhanced-neon-lights-372650947.jpg?w=992')"
+                ];
+
+                 let current = 1;
+                let boxCurrent = 1;
+
+                let boxBackgrounds = [
+                    "rgba(255, 255, 255, 0.7)",
+                "url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop')",
+                "url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2070&auto=format&fit=crop')",
+                "url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop')"
+                ];
+
+
+
+               
+
+
+                function changeBackground(){
+                    document.body.style.background = backgrounds[current];
+
+                    const box = document.getElementById("contentBox");
+                    box.style.background = boxBackgrounds[boxCurrent];
+
+                    current++;
+                    boxCurrent++;
+                    if(current >= backgrounds.length){
+                        current = 0;
+                    }
+
+                    if(boxCurrent >= boxBackgrounds.length){
+                    boxCurrent = 0;
+                    }
+                }
+        </script>
+    </body>
+</html>
